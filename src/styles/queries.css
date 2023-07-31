@@ -1,0 +1,46 @@
+/* ************** */
+/* BELOW 1200px */
+/* ************** */
+@media (max-width: 75em) {
+  html {
+    /* font-size: 9px */
+    font-size: 56.25%;
+  }
+}
+
+/* ************** */
+/* BELOW 752px */
+/* ************** */
+@media (max-width: 47em) {
+  html {
+    /* font-size: 8px */
+    font-size: 50%;
+  }
+}
+
+/* ************** */
+/* BELOW 656px */
+/* ************** */
+@media (max-width: 41em) {
+  .algorithms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+/* ************** */
+/* BELOW 512px */
+/* ************** */
+@media (max-width: 32em) {
+  .settings {
+    grid-template-columns: 1fr 6rem;
+  }
+
+  .settings label {
+    display: none;
+  }
+}

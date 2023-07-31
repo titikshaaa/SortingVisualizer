@@ -1,0 +1,389 @@
+/* 
+#e03131 RED
+#2f9e44 GREEN
+#fcc419 YELLOW 
+#4dabf7 BLUE
+#e9ecef LIGHTGRAY
+#212529 GRAY
+#5f3dc4 VIOLET
+
+MORE COLORS:
+https://yeun.github.io/open-color/
+
+*/
+
+/* ************ */
+/* GENERAL */
+/* ************ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: #f4f7fa;
+}
+
+/* ************ */
+/* TOOLBAR */
+/* ************ */
+header {
+  background-color: #212529;
+}
+
+.toolbar-container {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.2rem;
+
+  padding: 1.2rem 2rem;
+}
+
+.grid h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: 1.5px solid #e9ecef;
+  border-radius: 1rem;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: auto 1fr 6rem;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 0.8rem;
+  white-space: nowrap;
+}
+
+.settings label {
+  font-size: 1.2rem;
+}
+
+.algorithms {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.btn-normal {
+  background-color: #e7eaf0;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.btn-normal:hover,
+.btn-normal:active {
+  background-color: #4892d3;
+  color: #e9ecef;
+}
+
+.btn-normal.selected {
+  background-color: #1c7ed6;
+  color: #e9ecef;
+}
+
+.btn-normal:disabled {
+  color: #343a40;
+  pointer-events: none;
+}
+
+.btn-normal.selected:disabled {
+  color: #343a40;
+  background-color: #868e96;
+}
+
+.main-buttons {
+  position: relative;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.btn-generate {
+  position: absolute;
+  left: 1rem;
+
+  background-color: #5f3dc4;
+  color: white;
+  text-transform: uppercase;
+
+  transition: background-color 0.3s;
+}
+
+.btn-generate:hover {
+  transform: scale(1.05);
+}
+
+.btn-generate:disabled {
+  background-color: #343a40;
+  color: white;
+  pointer-events: none;
+}
+
+.btn-main {
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.btn-main:hover {
+  transform: scale(1.07);
+}
+
+.start {
+  background-color: #66a80f;
+}
+
+.stop {
+  background-color: #e03131;
+}
+
+/* ************ */
+/* VISUALIZER */
+/* ************ */
+.visualizer-container {
+  max-width: 120rem;
+  height: 70vh;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: flex;
+}
+
+.bar {
+  border: solid 1px white;
+  letter-spacing: -0.02rem;
+  border-radius: 0 0 4px 4px;
+  color: white;
+  font-size: 1.6rem;
+  -webkit-text-stroke: 0.1rem #212529;
+  text-align: center;
+}
+
+/* ************ */
+/* SLIDER */
+/* ************ */
+input[type='range'] {
+  width: 100%;
+  margin: 0.75rem 0;
+  background-color: transparent;
+  appearance: none;
+}
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  background: #228be6;
+  border: 0;
+  border-radius: 2.5rem;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+input[type='range']::-webkit-slider-thumb {
+  margin-top: -0.75rem;
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #228be6;
+  transition: all 0.3s;
+}
+input[type='range']::-moz-range-track {
+  background: #228be6;
+  border: 0;
+  border-radius: 2.5rem;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+input[type='range']::-moz-range-thumb {
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+input[type='range']::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 0.85rem 0;
+  color: transparent;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+}
+input[type='range']::-ms-fill-lower {
+  background: #228be6;
+  border: 0;
+  border-radius: 5rem;
+  transition: all 0.3s;
+}
+input[type='range']::-ms-fill-upper {
+  background: #228be6;
+  border: 0;
+  border-radius: 5rem;
+  transition: all 0.3s;
+}
+input[type='range']::-ms-thumb {
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #228be6;
+  transition: all 0.3s;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #228be6;
+  transition: all 0.3s;
+}
+
+@supports (-ms-ime-align: auto) {
+  input[type='range'] {
+    margin: 0;
+  }
+}
+
+/* ************ */
+/* SLIDER DISABLED */
+/* ************ */
+input[type='range']:disabled {
+  width: 100%;
+  margin: 0.75rem 0;
+  background-color: transparent;
+  appearance: none;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+input[type='range']:disabled:focus {
+  outline: none;
+}
+input[type='range']:disabled::-webkit-slider-runnable-track {
+  background: #868e96;
+  border: 0;
+  border-radius: 2.5rem;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+}
+input[type='range']:disabled::-webkit-slider-thumb {
+  margin-top: -0.75rem;
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type='range']:disabled:focus::-webkit-slider-runnable-track {
+  background: #868e96;
+}
+input[type='range']:disabled::-moz-range-track {
+  background: #868e96;
+  border: 0;
+  border-radius: 2.5rem;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+}
+input[type='range']:disabled::-moz-range-thumb {
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+input[type='range']:disabled::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 0.85rem 0;
+  color: transparent;
+  width: 100%;
+  height: 0.6rem;
+  cursor: pointer;
+}
+input[type='range']:disabled::-ms-fill-lower {
+  background: #868e96;
+  border: 0;
+  border-radius: 5rem;
+}
+input[type='range']:disabled::-ms-fill-upper {
+  background: #868e96;
+  border: 0;
+  border-radius: 5rem;
+}
+input[type='range']:disabled::-ms-thumb {
+  width: 0.9rem;
+  height: 2.1rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type='range']:disabled:focus::-ms-fill-lower {
+  background: #868e96;
+}
+input[type='range']:disabled:focus::-ms-fill-upper {
+  background: #868e96;
+}
+
+@supports (-ms-ime-align: auto) {
+  input[type='range']:disabled {
+    margin: 0;
+  }
+}
